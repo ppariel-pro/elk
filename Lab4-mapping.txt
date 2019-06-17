@@ -1,0 +1,49 @@
+PUT /test/
+PUT /test/_doc/1
+{ 
+  "name": "Paul",
+  "age": 35
+}
+
+GET /test/_mapping
+
+PUT /test/_doc/3
+{ 
+  "name": "Jean",
+  "age": 435,
+  "prenom": ["Jean","Harry","Le","Mairer"]
+}
+GET /test/_mapping
+
+PUT /test/_doc/3
+{ 
+  "name": "Jean",
+  "age": 435,
+  "prenom": ["Jean","Harry","Le","Mairer"],
+  "tag":["123","abc"]
+}
+GET /test/_mapping
+PUT /product
+{
+  "mappings": {
+    "dynamic": false,
+    "properties": {
+      "in_stock":{
+        "type": "integer"
+      },
+      "is_active": {
+        "type": "boolean"
+      },
+      "price": {
+        "type": "integer"
+      },
+      "sold": {
+        "type": "integer"
+      },
+      "created": {
+        "type": "date",
+        "format": "yyyy/MM/dd HH:mm:ss||yyyy/MM/dd"
+      }
+    }
+  }  
+}

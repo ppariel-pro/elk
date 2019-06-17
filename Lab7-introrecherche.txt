@@ -1,0 +1,29 @@
+GET /product/_search?q=*
+GET /product/_search?q=name:Lobster
+GET /product/_search?q=tags:Meat
+GET /product/_search?q=tags:Meat and name:Tuna
+
+GET /product/_search
+{
+  "query": {
+    "match_all": {}
+ }
+}
+
+GET /product/_search
+{
+  "query": {
+    "term": {
+      "name": "Lobster"
+      }
+    }
+ }
+
+GET /product/_search
+{
+  "query": {
+    "match": {
+      "name": "Lobster"
+      }
+    }
+ }
