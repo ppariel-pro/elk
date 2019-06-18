@@ -1,0 +1,57 @@
+Setting environment for using XAMPP for Windows.
+Formation@UTILISA-H5AN465 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.3.15-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database elastic;
+Query OK, 1 row affected (0.006 sec)
+
+MariaDB [(none)]> use elastic
+Database changed
+MariaDB [elastic]> create table contacts (id int, nom varchar(50), prenom varchar(50));
+Query OK, 0 rows affected (0.040 sec)
+
+MariaDB [elastic]> show tables;
++-------------------+
+| Tables_in_elastic |
++-------------------+
+| contacts          |
++-------------------+
+1 row in set (0.001 sec)
+
+MariaDB [elastic]> insert into contacts (id, nom, prenom) value (1,"Jean", "Henri");
+Query OK, 1 row affected (0.013 sec)
+
+MariaDB [elastic]> insert into contacts (id, nom, prenom) value (2,"luky", "luke");
+Query OK, 1 row affected (0.012 sec)
+
+MariaDB [elastic]> select * from contacts;
++------+------+--------+
+| id   | nom  | prenom |
++------+------+--------+
+|    1 | Jean | Henri  |
+|    2 | luky | luke   |
++------+------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [elastic]>
+
