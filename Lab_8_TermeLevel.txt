@@ -1,0 +1,133 @@
+GET /product/_search
+{
+  "query": {
+    "term": {
+      "is_active": true
+      }
+    }
+  }
+
+GET /product/_search
+{
+  "query": {
+    "term": {
+      "is_active": {
+        "value": true
+      }
+    }
+  }
+}
+GET /product/_search
+{
+  "query": {
+    "ids": {
+      "values": [1, 2, 3]
+    }
+  }
+}
+
+GET /product/_search
+{
+"query": {
+  "range": {
+    "in_stock": {
+      "gte": 1,
+      "lte": 5
+    }
+  }
+ }
+}
+
+GET /product/_search
+{
+"query": {
+  "range": {
+    "created": {
+      "gte": "2010/01/01",
+      "lte": "2010/12/31"
+    }
+  }
+ }
+}
+
+GET /product/_search
+{
+"query": {
+  "terms": {
+    "tags.keybord": [ "Soup", "Cake"]
+    }
+  }
+}
+  
+GET /_cat/indices
+DELETE /recipe
+
+GET /product/_search
+ {
+   "query": {
+     "range": {
+       "created": {
+         "gte": "2010/01/01||-1y"
+        }
+     }
+   }
+ }
+ 
+ GET /product/_search
+ {
+   "query": {
+     "range": {
+       "created": {
+         "gte": "now"
+     }
+   }
+  }
+ }
+ 
+ 
+ GET /product/_search
+{
+  "query" : { 
+  "prefix": {
+    "tags.keyword": "Vege"
+  }
+ }
+}
+
+GET /product/_search
+{
+  "query": {"wildcard": {
+    "tags.keyword": "Veg*ble"
+    }
+  }
+}
+
+GET /product/_search
+{
+  "query": {
+    "wildcard": {
+    "tags.keyword": "Veg?ble"
+    }
+  }
+}
+
+GET /product/_search
+{
+  "query": {"wildcard": {
+    "tags.keyword": "Veget?ble"
+    }
+  }
+}
+
+GET /product/_search
+{
+  "query": {
+    "regexp": {
+    "tags.keyword": "Veg[a-zA-Z]+ble"
+    }
+  }
+}
+
+
+
+ 

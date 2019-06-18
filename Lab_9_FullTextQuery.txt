@@ -1,0 +1,57 @@
+GET /recipe/_search
+{
+  "query": {
+    "match": {
+      "title": "paste spaghetti"
+    }
+  }
+}
+
+GET /recipe/_search
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "Recipes with pasta or spaghetti",
+        "operator": "and"
+    }
+    }
+  }
+}
+
+GET /recipe/_search
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "pasta or spaghetti",
+        "operator": "and"
+    }
+    }
+  }
+}
+
+GET /recipe/_search
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "pasta  spaghetti",
+        "operator": "and"
+    }
+    }
+  }
+}
+
+GET /recipe/_search ..... a verifier
+{
+  "query": {
+    "match_phrase": {
+      "title": "spaghetti puttanesca",
+        "operator": "and"
+    }
+    }
+  }
+
+
+autre exemple a faire
